@@ -1,7 +1,4 @@
 pipeline {
-    agent {
-       node {
-         label "valaxy"
       }
     }
     stages {
@@ -20,7 +17,7 @@ pipeline {
             }
             steps {
                 echo '<--------------- Sonar Analysis started  --------------->'
-                withSonarQubeEnv('Valaxy-SonarQube') {    
+                withSonarQubeEnv('Sonar') {    
                     //sonarqube server name in master
                     sh "${scannerHome}/bin/sonar-scanner"
                 }    
