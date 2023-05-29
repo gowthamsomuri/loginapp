@@ -1,4 +1,7 @@
 pipeline {
+    agent {
+       node {
+         label "linux"
       }
     }
     stages {
@@ -13,7 +16,7 @@ pipeline {
 
   stage ("Sonar Analysis") {
             environment {
-               scannerHome = tool 'Valaxy-SonarScanner'  //scanner name configured for slave 
+               scannerHome = tool 'sonar'  //scanner name configured for slave 
             }
             steps {
                 echo '<--------------- Sonar Analysis started  --------------->'
